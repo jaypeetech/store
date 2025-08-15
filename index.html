@@ -3,45 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HostelPencil - Premium Stationery Delivered</title>
+    <title>DormRoom</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        .product-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .loader {
-            border: 4px solid #e5e7eb;
-            border-top: 4px solid #4f46e5;
-            border-radius: 50%;
-            width: 48px;
-            height: 48px;
-            animation: spin 1s linear infinite;
-            margin: 40px auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        .fade-in {
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        .product-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+        .loader { border: 4px solid #e5e7eb; border-top: 4px solid #4f46e5; border-radius: 50%; width: 48px; height: 48px; animation: spin 1s linear infinite; margin: 40px auto; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .fade-in { animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -50,35 +23,30 @@
     <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <a href="#" class="text-2xl font-bold text-gray-900">
-                    Hostel<span class="text-indigo-600">Pencil</span>
-                </a>
+                <a href="#" class="text-2xl font-bold text-gray-900">DormRoom-Store</a>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-gray-600 hover:text-indigo-600 transition-colors">Home</a>
-                    <a href="#products" class="text-gray-600 hover:text-indigo-600 transition-colors">Products</a>
-                    <a href="#order" class="text-gray-600 hover:text-indigo-600 transition-colors">Your Order</a>
+                    <a href="#home" class="text-gray-600 hover:text-indigo-600">Home</a>
+                    <a href="#products" class="text-gray-600 hover:text-indigo-600">Products</a>
+                    <a href="#order" class="text-gray-600 hover:text-indigo-600">Your Order</a>
                 </div>
                 <div class="md:hidden">
-                    <button id="menu-btn" class="p-2 rounded-md text-gray-600 hover:text-indigo-600 hover:bg-gray-100 focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                    </button>
+                    <button id="menu-btn" class="p-2 rounded-md text-gray-600 hover:text-indigo-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button>
                 </div>
             </div>
         </nav>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2">
-            <a href="#home" class="block py-2 text-gray-600 hover:text-indigo-600 rounded-md hover:bg-gray-100">Home</a>
-            <a href="#products" class="block py-2 text-gray-600 hover:text-indigo-600 rounded-md hover:bg-gray-100">Products</a>
-            <a href="#order" class="block py-2 text-gray-600 hover:text-indigo-600 rounded-md hover:bg-gray-100">Your Order</a>
+            <a href="#home" class="block py-2 text-gray-600 hover:text-indigo-600">Home</a>
+            <a href="#products" class="block py-2 text-gray-600 hover:text-indigo-600">Products</a>
+            <a href="#order" class="block py-2 text-gray-600 hover:text-indigo-600">Your Order</a>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="bg-indigo-600 text-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
-            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4">Stationery, Delivered.</h1>
-            <p class="text-lg md:text-xl text-indigo-200 max-w-2xl mx-auto mb-8">Focus on your studies. We'll bring the essentials right to your hostel door, hassle-free.</p>
-            <a href="#products" class="bg-white text-indigo-600 font-bold py-3 px-8 rounded-full text-lg hover:bg-indigo-50 transition-transform transform hover:scale-105 duration-300 inline-block">Explore Products</a>
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Stationery, Delivered.</h1>
+            <p class="text-lg md:text-xl text-indigo-200 max-w-2xl mx-auto mb-8">Focus on your studies. We'll bring the essentials right to your hostel door.</p>
+            <a href="#products" class="bg-white text-indigo-600 font-bold py-3 px-8 rounded-full text-lg hover:bg-indigo-50 transition transform hover:scale-105 duration-300 inline-block">Explore Products</a>
         </div>
     </section>
 
@@ -86,11 +54,10 @@
     <section id="products" class="py-20">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Our Curated Collection</h2>
+                <h2 class="text-3xl md:text-4xl font-bold">Our Curated Collection</h2>
                 <p class="text-gray-600 mt-2">High-quality essentials for every student.</p>
             </div>
             <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Products will be loaded here -->
                 <div class="loader col-span-full"></div>
             </div>
         </div>
@@ -101,34 +68,31 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-lg">
                 <h2 class="text-3xl font-bold text-center mb-8">Review Your Order</h2>
-                
                 <div id="cart-items" class="mb-6 space-y-4">
-                    <p class="text-gray-500 text-center py-4">Your cart is empty. Add some products to get started!</p>
+                    <p class="text-gray-500 text-center py-4">Your cart is empty.</p>
                 </div>
-
                 <div class="border-t-2 border-dashed pt-6 mb-6">
                     <div class="flex justify-between items-center text-xl font-bold">
                         <span>Total</span>
                         <span id="cart-total" class="text-indigo-600">₹0.00</span>
                     </div>
                 </div>
-
                 <form id="order-form">
                     <div class="space-y-4">
                         <div>
                             <label for="name" class="block text-gray-700 font-medium mb-1">Full Name</label>
-                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" required>
+                            <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500" required>
                         </div>
                         <div>
                             <label for="hostel-room" class="block text-gray-700 font-medium mb-1">Hostel & Room No.</label>
-                            <input type="text" id="hostel-room" name="hostel-room" placeholder="e.g., Block A, Room 201" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" required>
+                            <input type="text" id="hostel-room" placeholder="e.g., Block A, Room 201" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500" required>
                         </div>
                         <div>
                             <label for="phone" class="block text-gray-700 font-medium mb-1">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="e.g., 9876543210" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition" required>
+                            <input type="tel" id="phone" placeholder="e.g., 9876543210" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500" required>
                         </div>
                     </div>
-                    <button type="submit" class="w-full mt-8 bg-indigo-600 text-white py-3 px-4 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition-transform transform hover:scale-105 duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Place Order</button>
+                    <button type="submit" class="w-full mt-8 bg-indigo-600 text-white py-3 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition transform hover:scale-105">Place Order</button>
                 </form>
             </div>
         </div>
@@ -153,7 +117,7 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-        import { getFirestore, collection, addDoc, serverTimestamp, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getFirestore, collection, addDoc, serverTimestamp, onSnapshot, runTransaction, doc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
         // --- Firebase Configuration ---
         const firebaseConfig = {
@@ -174,7 +138,6 @@
         let userId = null;
         let cart = [];
 
-        // --- UI Elements ---
         const productGrid = document.getElementById('product-grid');
         const cartItemsDiv = document.getElementById('cart-items');
         const cartTotalSpan = document.getElementById('cart-total');
@@ -183,74 +146,97 @@
         const notificationMessage = document.getElementById('notification-message');
         const closeModalBtn = document.getElementById('close-modal-btn');
 
-        // --- Authentication ---
         onAuthStateChanged(auth, async (user) => {
             if (user) {
                 userId = user.uid;
                 listenForProductChanges();
             } else {
-                try {
-                    await signInAnonymously(auth);
-                } catch (error) {
-                    console.error("Authentication failed:", error);
-                    showNotification("Error: Could not connect to the service.");
-                }
+                try { await signInAnonymously(auth); } catch (error) { showNotification("Error: Could not connect."); }
             }
         });
 
-        // --- Product Loading ---
         function listenForProductChanges() {
             const productCollection = collection(db, `/artifacts/${appId}/public/data/products`);
             onSnapshot(productCollection, (querySnapshot) => {
                 productGrid.innerHTML = ''; 
                 if (querySnapshot.empty) {
-                    productGrid.innerHTML = '<p class="text-center col-span-full text-gray-600">No products available at the moment.</p>';
+                    productGrid.innerHTML = '<p class="text-center col-span-full">No products available.</p>';
                     return;
                 }
                 querySnapshot.forEach((doc) => {
-                    const product = doc.data();
+                    const product = { id: doc.id, ...doc.data() };
+                    const isOutOfStock = product.units <= 0;
                     const productCard = `
-                        <div class="product-card bg-white rounded-xl shadow-md overflow-hidden flex flex-col">
+                        <div class="product-card bg-white rounded-xl shadow-md overflow-hidden flex flex-col ${isOutOfStock ? 'opacity-50' : ''}">
                             <img src="${product.imageUrl}" alt="${product.name}" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e2e8f0/4a5568?text=Image+Error';">
                             <div class="p-5 flex flex-col flex-grow">
                                 <h3 class="font-bold text-lg mb-1">${product.name}</h3>
-                                <p class="text-gray-500 text-sm mb-4">A high-quality student essential.</p>
-                                <div class="mt-auto flex justify-between items-center">
-                                    <p class="text-xl font-bold text-indigo-600">₹${product.price.toFixed(2)}</p>
-                                    <button data-product-name="${product.name}" data-product-price="${product.price}" class="add-to-cart-btn bg-indigo-100 text-indigo-700 font-semibold py-2 px-4 rounded-lg hover:bg-indigo-200 transition-colors">Add</button>
+                                <p class="text-gray-500 text-sm mb-4">${product.units} units left</p>
+                                <div class="mt-auto">
+                                    <div class="flex justify-between items-center mb-4">
+                                        <p class="text-xl font-bold text-indigo-600">₹${product.price.toFixed(2)}</p>
+                                        <div class="flex items-center border rounded-lg">
+                                            <button class="quantity-minus px-3 py-1 text-lg font-bold text-gray-600 hover:bg-gray-100 rounded-l-lg">-</button>
+                                            <span class="quantity-display w-10 text-center font-semibold">1</span>
+                                            <button class="quantity-plus px-3 py-1 text-lg font-bold text-gray-600 hover:bg-gray-100 rounded-r-lg">+</button>
+                                        </div>
+                                    </div>
+                                    ${isOutOfStock 
+                                        ? `<span class="block w-full text-center text-sm font-bold text-red-500 py-2">Out of Stock</span>`
+                                        : `<button data-product-id="${product.id}" data-product-name="${product.name}" data-product-price="${product.price}" class="add-to-cart-btn w-full bg-indigo-100 text-indigo-700 font-semibold py-2 px-4 rounded-lg hover:bg-indigo-200">Add to Cart</button>`
+                                    }
                                 </div>
                             </div>
                         </div>
                     `;
                     productGrid.innerHTML += productCard;
                 });
-                attachCartButtonListeners();
-            }, (error) => {
-                console.error("Error loading products: ", error);
-                productGrid.innerHTML = '<p class="text-center col-span-full text-red-500">Could not load products.</p>';
+                attachProductCardListeners();
             });
         }
 
-        // --- Cart Logic ---
-        function attachCartButtonListeners() {
-            document.querySelectorAll('.add-to-cart-btn').forEach(button => {
-                button.addEventListener('click', (e) => {
-                    const name = e.target.dataset.productName;
-                    const price = parseFloat(e.target.dataset.productPrice);
-                    addToCart({ name, price });
-                });
+        function attachProductCardListeners() {
+            document.querySelectorAll('.product-card').forEach(card => {
+                const minusBtn = card.querySelector('.quantity-minus');
+                const plusBtn = card.querySelector('.quantity-plus');
+                const quantityDisplay = card.querySelector('.quantity-display');
+                const addToCartBtn = card.querySelector('.add-to-cart-btn');
+
+                if(minusBtn) {
+                    minusBtn.addEventListener('click', () => {
+                        let currentQuantity = parseInt(quantityDisplay.textContent);
+                        if (currentQuantity > 1) {
+                            quantityDisplay.textContent = currentQuantity - 1;
+                        }
+                    });
+                }
+                
+                if(plusBtn) {
+                    plusBtn.addEventListener('click', () => {
+                        let currentQuantity = parseInt(quantityDisplay.textContent);
+                        quantityDisplay.textContent = currentQuantity + 1;
+                    });
+                }
+
+                if(addToCartBtn) {
+                    addToCartBtn.addEventListener('click', (e) => {
+                        const { productId, productName, productPrice } = e.target.dataset;
+                        const quantity = parseInt(quantityDisplay.textContent);
+                        addToCart({ id: productId, name: productName, price: parseFloat(productPrice) }, quantity);
+                    });
+                }
             });
         }
 
-        function addToCart(product) {
-            const existingProduct = cart.find(item => item.name === product.name);
+        function addToCart(product, quantity) {
+            const existingProduct = cart.find(item => item.id === product.id);
             if (existingProduct) {
-                existingProduct.quantity++;
+                existingProduct.quantity += quantity;
             } else {
-                cart.push({ ...product, quantity: 1 });
+                cart.push({ ...product, quantity: quantity });
             }
             updateCartDisplay();
-            showNotification(`Added "${product.name}" to your cart!`);
+            showNotification(`Added ${quantity} x "${product.name}" to cart!`);
         }
 
         function updateCartDisplay() {
@@ -259,7 +245,6 @@
                 cartTotalSpan.textContent = '₹0.00';
                 return;
             }
-
             cartItemsDiv.innerHTML = '';
             let total = 0;
             cart.forEach(item => {
@@ -269,7 +254,7 @@
                 itemDiv.innerHTML = `
                     <div>
                         <p class="font-medium">${item.name}</p>
-                        <p class="text-sm text-gray-500">Quantity: ${item.quantity}</p>
+                        <p class="text-sm text-gray-500">Qty: ${item.quantity}</p>
                     </div>
                     <p class="font-medium">₹${(item.price * item.quantity).toFixed(2)}</p>
                 `;
@@ -278,61 +263,64 @@
             cartTotalSpan.textContent = `₹${total.toFixed(2)}`;
         }
         
-        function getCartTotal() {
-            return cart.reduce((total, item) => total + item.price * item.quantity, 0);
-        }
-
-        // --- Order Flow ---
         orderForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             if (cart.length === 0) {
-                showNotification("Your cart is empty. Please add items before ordering.");
+                showNotification("Your cart is empty.");
                 return;
             }
             
             const name = document.getElementById('name').value;
             const room = document.getElementById('hostel-room').value;
             const phone = document.getElementById('phone').value;
-            const totalAmount = getCartTotal();
-            const orderItems = cart.map(item => `${item.quantity} x ${item.name}`).join(', ');
-
+            
             try {
-                const orderCollection = collection(db, `/artifacts/${appId}/public/data/orders`);
-                await addDoc(orderCollection, {
-                    customerName: name,
-                    hostelRoom: room,
-                    phoneNumber: phone,
-                    orderItems: orderItems,
-                    totalAmount: totalAmount,
-                    status: 'Unpaid',
-                    createdAt: serverTimestamp(),
-                    customerId: userId
+                await runTransaction(db, async (transaction) => {
+                    const productRefs = cart.map(item => doc(db, `/artifacts/${appId}/public/data/products`, item.id));
+                    const productDocs = await Promise.all(productRefs.map(ref => transaction.get(ref)));
+
+                    for (let i = 0; i < productDocs.length; i++) {
+                        const productDoc = productDocs[i];
+                        if (!productDoc.exists()) throw `Product ${cart[i].name} not found.`;
+                        
+                        const newStock = productDoc.data().units - cart[i].quantity;
+                        if (newStock < 0) throw `Not enough stock for ${cart[i].name}.`;
+                        
+                        transaction.update(productRefs[i], { units: newStock });
+                    }
+
+                    const orderCollection = collection(db, `/artifacts/${appId}/public/data/orders`);
+                    const newOrderRef = doc(orderCollection);
+                    transaction.set(newOrderRef, {
+                        customerName: name,
+                        hostelRoom: room,
+                        phoneNumber: phone,
+                        orderItems: cart.map(item => `${item.quantity} x ${item.name}`).join(', '),
+                        totalAmount: cart.reduce((total, item) => total + item.price * item.quantity, 0),
+                        status: 'Unpaid',
+                        createdAt: serverTimestamp(),
+                        customerId: userId
+                    });
                 });
-                showNotification(`Thanks, ${name}! Your order has been placed. We'll collect payment on delivery.`);
+
+                showNotification(`Thanks, ${name}! Your order is placed.`);
                 orderForm.reset();
                 cart = [];
                 updateCartDisplay();
             } catch (error) {
-                console.error("Error placing order: ", error);
-                showNotification("There was an error placing your order.");
+                showNotification(`Order failed: ${error.toString()}`);
             }
         });
 
-        // --- UI & Modal Script ---
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
         
         function showNotification(message) {
             notificationMessage.textContent = message;
             notificationModal.classList.remove('hidden');
         }
-
-        closeModalBtn.addEventListener('click', () => {
-            notificationModal.classList.add('hidden');
-        });
+        closeModalBtn.addEventListener('click', () => notificationModal.classList.add('hidden'));
     </script>
 </body>
 </html>
