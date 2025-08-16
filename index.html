@@ -23,11 +23,12 @@
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <a href="#" class="text-2xl font-bold text-gray-900">DormRoom-<span class="text-indigo-600">Store</span></a>
+                <a href="#" class="text-2xl font-bold text-gray-900">Hostel<span class="text-indigo-600">Pencil</span></a>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#home" class="text-gray-600 hover:text-indigo-600">Home</a>
                     <a href="#products" class="text-gray-600 hover:text-indigo-600">Products</a>
                     <a href="#order" class="text-gray-600 hover:text-indigo-600">Your Order</a>
+                    <a href="#sell" class="text-gray-600 hover:text-indigo-600">Sell</a>
                 </div>
                 <div class="md:hidden">
                     <button id="menu-btn" class="p-2 rounded-md text-gray-600 hover:text-indigo-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button>
@@ -38,6 +39,7 @@
             <a href="#home" class="block py-2 text-gray-600 hover:text-indigo-600">Home</a>
             <a href="#products" class="block py-2 text-gray-600 hover:text-indigo-600">Products</a>
             <a href="#order" class="block py-2 text-gray-600 hover:text-indigo-600">Your Order</a>
+            <a href="#sell" class="block py-2 text-gray-600 hover:text-indigo-600">Sell</a>
         </div>
     </header>
 
@@ -57,10 +59,16 @@
                 <h2 class="text-3xl md:text-4xl font-bold">Our Curated Collection</h2>
                 <p class="text-gray-600 mt-2">High-quality essentials for every student.</p>
             </div>
+            
             <!-- Search Bar -->
             <div class="max-w-xl mx-auto mb-12">
-                <input type="search" id="search-bar" placeholder="Search for products..." class="w-full px-5 py-3 border border-gray-300 rounded-full shadow-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                <form id="search-form" class="flex">
+                    <input type="text" id="search-input" placeholder="Search for products..." class="w-full px-4 py-2 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                    <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded-r-lg font-semibold hover:bg-indigo-700">Search</button>
+                </form>
+                <button id="clear-search-btn" class="hidden w-full mt-4 bg-gray-200 text-gray-700 py-2 rounded-lg font-semibold hover:bg-gray-300">Clear Search</button>
             </div>
+
             <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="loader col-span-full"></div>
             </div>
@@ -83,20 +91,27 @@
                 </div>
                 <form id="order-form">
                     <div class="space-y-4">
-                        <div>
-                            <label for="name" class="block text-gray-700 font-medium mb-1">Full Name</label>
-                            <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500" required>
-                        </div>
-                        <div>
-                            <label for="hostel-room" class="block text-gray-700 font-medium mb-1">Hostel & Room No.</label>
-                            <input type="text" id="hostel-room" placeholder="e.g., Block A, Room 201" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500" required>
-                        </div>
-                        <div>
-                            <label for="phone" class="block text-gray-700 font-medium mb-1">Phone Number</label>
-                            <input type="tel" id="phone" placeholder="e.g., 9876543210" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500" required>
-                        </div>
+                        <div><label for="name" class="block text-gray-700 font-medium mb-1">Full Name</label><input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500" required></div>
+                        <div><label for="hostel-room" class="block text-gray-700 font-medium mb-1">Hostel & Room No.</label><input type="text" id="hostel-room" placeholder="e.g., Block A, Room 201" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500" required></div>
+                        <div><label for="phone" class="block text-gray-700 font-medium mb-1">Phone Number</label><input type="tel" id="phone" placeholder="e.g., 9876543210" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500" required></div>
                     </div>
                     <button type="submit" class="w-full mt-8 bg-indigo-600 text-white py-3 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition transform hover:scale-105">Place Order</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sell Your Products Section -->
+    <section id="sell" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-2">Sell Your Products</h2>
+                <p class="text-gray-600 mb-8">Have something to sell? Fill out the form and we'll get in touch.</p>
+                <form id="sell-form" class="space-y-4">
+                    <div><label for="seller-name" class="block text-gray-700 font-medium mb-1 text-left">Your Name</label><input type="text" id="seller-name" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500" required></div>
+                    <div><label for="seller-product" class="block text-gray-700 font-medium mb-1 text-left">Product Name / Description</label><input type="text" id="seller-product" placeholder="e.g., Unused Notebooks, Scientific Calculator" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500" required></div>
+                    <div><label for="seller-phone" class="block text-gray-700 font-medium mb-1 text-left">Your Phone Number</label><input type="tel" id="seller-phone" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500" required></div>
+                    <button type="submit" class="w-full mt-8 bg-green-600 text-white py-3 rounded-lg font-semibold text-lg hover:bg-green-700 transition transform hover:scale-105">Submit Inquiry</button>
                 </form>
             </div>
         </div>
@@ -104,9 +119,7 @@
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-8">
-        <div class="container mx-auto text-center text-gray-400">
-            <p>&copy; 2025 DormRoom-Store. All Rights Reserved.</p>
-        </div>
+        <div class="container mx-auto text-center text-gray-400"><p>&copy; 2024 HostelPencil. All Rights Reserved.</p></div>
     </footer>
 
     <!-- Notification Modal -->
@@ -117,7 +130,6 @@
         </div>
     </div>
 
-    <!-- Firebase SDKs -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
         import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
@@ -140,155 +152,81 @@
         let userId = null;
         let cart = [];
         let productsCache = [];
-        let searchDebounceTimer;
 
         const productGrid = document.getElementById('product-grid');
         const cartItemsDiv = document.getElementById('cart-items');
         const cartTotalSpan = document.getElementById('cart-total');
         const orderForm = document.getElementById('order-form');
+        const sellForm = document.getElementById('sell-form');
+        const searchForm = document.getElementById('search-form');
+        const searchInput = document.getElementById('search-input');
+        const clearSearchBtn = document.getElementById('clear-search-btn');
         const notificationModal = document.getElementById('notification-modal');
         const notificationMessage = document.getElementById('notification-message');
         const closeModalBtn = document.getElementById('close-modal-btn');
-        const searchBar = document.getElementById('search-bar');
 
         onAuthStateChanged(auth, async (user) => {
-            if (user) {
-                userId = user.uid;
-                listenForProductChanges();
-            } else {
-                try { await signInAnonymously(auth); } catch (error) { showNotification("Error: Could not connect."); }
-            }
+            if (user) { userId = user.uid; listenForProductChanges(); } 
+            else { try { await signInAnonymously(auth); } catch (error) { showNotification("Error: Could not connect."); } }
         });
 
         function listenForProductChanges() {
             const productCollection = collection(db, `/artifacts/${appId}/public/data/products`);
             onSnapshot(productCollection, (querySnapshot) => {
-                productsCache = [];
-                querySnapshot.forEach((doc) => {
-                    productsCache.push({ id: doc.id, ...doc.data() });
-                });
-                renderProducts(); // Render all products initially
+                productsCache = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                renderProducts(productsCache);
             });
         }
 
-        function renderProducts(searchTerm = '') {
-            const lowerCaseSearchTerm = searchTerm.toLowerCase();
-            const filteredProducts = productsCache.filter(p => p.name.toLowerCase().includes(lowerCaseSearchTerm));
-            
+        function renderProducts(productsToRender) {
             productGrid.innerHTML = ''; 
-            if (filteredProducts.length === 0) {
-                productGrid.innerHTML = `<p class="text-center col-span-full">${searchTerm ? 'No products match your search.' : 'No products available.'}</p>`;
+            if (productsToRender.length === 0) {
+                productGrid.innerHTML = '<p class="text-center col-span-full">No products found.</p>';
                 return;
             }
-
-            filteredProducts.forEach((product) => {
+            productsToRender.forEach(product => {
                 const isOutOfStock = product.units <= 0;
-                productGrid.innerHTML += `
-                    <div class="product-card bg-white rounded-xl shadow-md overflow-hidden flex flex-col ${isOutOfStock ? 'opacity-50' : ''}">
-                        <img src="${product.imageUrl}" alt="${product.name}" class="w-full h-48 object-cover">
-                        <div class="p-5 flex flex-col flex-grow">
-                            <h3 class="font-bold text-lg mb-1">${product.name}</h3>
-                            <p class="text-gray-500 text-sm mb-4">${product.units} units left</p>
-                            <div class="mt-auto">
-                                <div class="flex justify-between items-center mb-4">
-                                    <p class="text-xl font-bold text-indigo-600">₹${product.price.toFixed(2)}</p>
-                                    <div class="flex items-center border rounded-lg">
-                                        <button class="quantity-minus px-3 py-1 text-lg">-</button>
-                                        <span class="quantity-display w-10 text-center">1</span>
-                                        <button data-max-units="${product.units}" class="quantity-plus px-3 py-1 text-lg">+</button>
-                                    </div>
-                                </div>
-                                ${isOutOfStock 
-                                    ? `<span class="block w-full text-center text-sm font-bold text-red-500 py-2">Out of Stock</span>`
-                                    : `<button data-product-id="${product.id}" data-product-name="${product.name}" data-product-price="${product.price}" class="add-to-cart-btn w-full bg-indigo-100 text-indigo-700 font-semibold py-2 px-4 rounded-lg hover:bg-indigo-200">Add to Cart</button>`
-                                }
-                            </div>
-                        </div>
-                    </div>
-                `;
+                productGrid.innerHTML += `<div class="product-card bg-white rounded-xl shadow-md overflow-hidden flex flex-col ${isOutOfStock ? 'opacity-50' : ''}"><img src="${product.imageUrl}" alt="${product.name}" class="w-full h-48 object-cover"><div class="p-5 flex flex-col flex-grow"><h3 class="font-bold text-lg mb-1">${product.name}</h3><p class="text-gray-500 text-sm mb-4">${product.units} units left</p><div class="mt-auto"><div class="flex justify-between items-center mb-4"><p class="text-xl font-bold text-indigo-600">₹${product.price.toFixed(2)}</p><div class="flex items-center border rounded-lg"><button class="quantity-minus px-3 py-1 text-lg font-bold text-gray-600 hover:bg-gray-100 rounded-l-lg">-</button><span class="quantity-display w-10 text-center font-semibold">1</span><button data-max-units="${product.units}" class="quantity-plus px-3 py-1 text-lg font-bold text-gray-600 hover:bg-gray-100 rounded-r-lg">+</button></div></div>${isOutOfStock ? `<span class="block w-full text-center text-sm font-bold text-red-500 py-2">Out of Stock</span>` : `<button data-product-id="${product.id}" data-product-name="${product.name}" data-product-price="${product.price}" class="add-to-cart-btn w-full bg-indigo-100 text-indigo-700 font-semibold py-2 px-4 rounded-lg hover:bg-indigo-200">Add to Cart</button>`}</div></div></div>`;
             });
             attachProductCardListeners();
-        }
-        
-        searchBar.addEventListener('input', (e) => {
-            const searchTerm = e.target.value;
-            renderProducts(searchTerm);
-
-            clearTimeout(searchDebounceTimer);
-            if (searchTerm.trim().length > 2) { // Only save searches with 3+ characters
-                searchDebounceTimer = setTimeout(() => {
-                    saveSearchTerm(searchTerm.trim());
-                }, 1000); // Wait 1 second after user stops typing
-            }
-        });
-
-        async function saveSearchTerm(term) {
-            try {
-                const searchCollection = collection(db, `/artifacts/${appId}/public/data/searches`);
-                await addDoc(searchCollection, {
-                    term: term,
-                    timestamp: serverTimestamp()
-                });
-            } catch (error) {
-                console.error("Error saving search term:", error);
-            }
         }
 
         function attachProductCardListeners() {
             document.querySelectorAll('.product-card').forEach(card => {
-                const minusBtn = card.querySelector('.quantity-minus');
                 const plusBtn = card.querySelector('.quantity-plus');
-                const quantityDisplay = card.querySelector('.quantity-display');
-                const addToCartBtn = card.querySelector('.add-to-cart-btn');
-
-                if(plusBtn) {
+                if (plusBtn) {
                     const maxUnits = parseInt(plusBtn.dataset.maxUnits);
                     plusBtn.addEventListener('click', () => {
+                        const quantityDisplay = card.querySelector('.quantity-display');
                         let currentQuantity = parseInt(quantityDisplay.textContent);
-                        if (currentQuantity < maxUnits) {
-                            quantityDisplay.textContent = currentQuantity + 1;
-                        } else {
-                            showNotification(`Only ${maxUnits} units available.`);
-                        }
+                        if (currentQuantity < maxUnits) quantityDisplay.textContent = currentQuantity + 1;
+                        else showNotification(`Only ${maxUnits} units available.`);
                     });
                 }
-
-                if(minusBtn) {
-                    minusBtn.addEventListener('click', () => {
-                        let currentQuantity = parseInt(quantityDisplay.textContent);
-                        if (currentQuantity > 1) {
-                            quantityDisplay.textContent = currentQuantity - 1;
-                        }
-                    });
-                }
-
-                if(addToCartBtn) {
-                    addToCartBtn.addEventListener('click', (e) => {
-                        const { productId, productName, productPrice } = e.target.dataset;
-                        const quantity = parseInt(quantityDisplay.textContent);
-                        addToCart({ id: productId, name: productName, price: parseFloat(productPrice) }, quantity);
-                    });
-                }
+                card.querySelector('.quantity-minus')?.addEventListener('click', () => {
+                    const quantityDisplay = card.querySelector('.quantity-display');
+                    let currentQuantity = parseInt(quantityDisplay.textContent);
+                    if (currentQuantity > 1) quantityDisplay.textContent = currentQuantity - 1;
+                });
+                card.querySelector('.add-to-cart-btn')?.addEventListener('click', (e) => {
+                    const { productId, productName, productPrice } = e.target.dataset;
+                    const quantity = parseInt(card.querySelector('.quantity-display').textContent);
+                    addToCart({ id: productId, name: productName, price: parseFloat(productPrice) }, quantity);
+                });
             });
         }
 
         function addToCart(product, quantity) {
             const productInStock = productsCache.find(p => p.id === product.id);
             if (!productInStock) return;
-
             const existingProduct = cart.find(item => item.id === product.id);
             let newQuantity = existingProduct ? existingProduct.quantity + quantity : quantity;
-
             if (newQuantity > productInStock.units) {
-                showNotification(`Only ${productInStock.units} units of "${product.name}" are available.`);
+                showNotification(`Only ${productInStock.units} units of "${product.name}" available.`);
                 newQuantity = productInStock.units;
             }
-
-            if (existingProduct) {
-                existingProduct.quantity = newQuantity;
-            } else {
-                cart.push({ ...product, quantity: newQuantity });
-            }
+            if (existingProduct) existingProduct.quantity = newQuantity;
+            else cart.push({ ...product, quantity: newQuantity });
             updateCartDisplay();
             showNotification(`Updated cart for "${product.name}".`);
         }
@@ -296,22 +234,15 @@
         function adjustQuantity(productId, amount) {
             const cartItem = cart.find(item => item.id === productId);
             if (!cartItem) return;
-
             const productInStock = productsCache.find(p => p.id === productId);
             if (!productInStock) return;
-
             let newQuantity = cartItem.quantity + amount;
-
             if (newQuantity > productInStock.units) {
                 showNotification(`Only ${productInStock.units} units available.`);
                 return;
             }
-            
-            if (newQuantity <= 0) {
-                cart = cart.filter(item => item.id !== productId);
-            } else {
-                cartItem.quantity = newQuantity;
-            }
+            if (newQuantity <= 0) cart = cart.filter(item => item.id !== productId);
+            else cartItem.quantity = newQuantity;
             updateCartDisplay();
         }
 
@@ -325,53 +256,43 @@
             let total = 0;
             cart.forEach(item => {
                 total += item.price * item.quantity;
-                const itemDiv = document.createElement('div');
-                itemDiv.className = 'flex justify-between items-center';
-                itemDiv.innerHTML = `
-                    <div>
-                        <p class="font-medium">${item.name}</p>
-                        <div class="flex items-center space-x-2 mt-1">
-                            <button data-product-id="${item.id}" class="cart-quantity-minus bg-gray-200 w-6 h-6 rounded-full font-bold">-</button>
-                            <span class="text-sm text-gray-600">Qty: ${item.quantity}</span>
-                            <button data-product-id="${item.id}" class="cart-quantity-plus bg-gray-200 w-6 h-6 rounded-full font-bold">+</button>
+                cartItemsDiv.innerHTML += `
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="font-medium">${item.name}</p>
+                            <div class="flex items-center space-x-2 mt-1">
+                                <button data-product-id="${item.id}" class="cart-quantity-minus bg-gray-200 w-6 h-6 rounded-full font-bold">-</button>
+                                <span class="text-sm text-gray-600">Qty: ${item.quantity}</span>
+                                <button data-product-id="${item.id}" class="cart-quantity-plus bg-gray-200 w-6 h-6 rounded-full font-bold">+</button>
+                            </div>
                         </div>
+                        <p class="font-medium">₹${(item.price * item.quantity).toFixed(2)}</p>
                     </div>
-                    <p class="font-medium">₹${(item.price * item.quantity).toFixed(2)}</p>
                 `;
-                cartItemsDiv.appendChild(itemDiv);
             });
             cartTotalSpan.textContent = `₹${total.toFixed(2)}`;
-            
-            document.querySelectorAll('.cart-quantity-minus').forEach(button => {
-                button.addEventListener('click', (e) => adjustQuantity(e.target.dataset.productId, -1));
-            });
-            document.querySelectorAll('.cart-quantity-plus').forEach(button => {
-                button.addEventListener('click', (e) => adjustQuantity(e.target.dataset.productId, 1));
-            });
+            document.querySelectorAll('.cart-quantity-minus').forEach(b => b.addEventListener('click', e => adjustQuantity(e.target.dataset.productId, -1)));
+            document.querySelectorAll('.cart-quantity-plus').forEach(b => b.addEventListener('click', e => adjustQuantity(e.target.dataset.productId, 1)));
         }
         
         orderForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             if (cart.length === 0) { showNotification("Your cart is empty."); return; }
-            
             const name = document.getElementById('name').value;
             const room = document.getElementById('hostel-room').value;
             const phone = document.getElementById('phone').value;
-            
             try {
                 await runTransaction(db, async (transaction) => {
-                    const productRefs = cart.map(item => doc(db, `/artifacts/${appId}/public/data/products`, item.id));
-                    const productDocs = await Promise.all(productRefs.map(ref => transaction.get(ref)));
-                    for (let i = 0; i < productDocs.length; i++) {
-                        const productDoc = productDocs[i];
-                        if (!productDoc.exists()) throw `Product ${cart[i].name} not found.`;
-                        const newStock = productDoc.data().units - cart[i].quantity;
-                        if (newStock < 0) throw `Not enough stock for ${cart[i].name}.`;
-                        transaction.update(productRefs[i], { units: newStock });
+                    for (const item of cart) {
+                        const productRef = doc(db, `/artifacts/${appId}/public/data/products`, item.id);
+                        const productDoc = await transaction.get(productRef);
+                        if (!productDoc.exists()) throw `Product ${item.name} not found.`;
+                        const newStock = productDoc.data().units - item.quantity;
+                        if (newStock < 0) throw `Not enough stock for ${item.name}.`;
+                        transaction.update(productRef, { units: newStock });
                     }
                     const orderCollection = collection(db, `/artifacts/${appId}/public/data/orders`);
-                    const newOrderRef = doc(orderCollection);
-                    transaction.set(newOrderRef, {
+                    transaction.set(doc(orderCollection), {
                         customerName: name, hostelRoom: room, phoneNumber: phone,
                         orderItems: cart.map(item => `${item.quantity} x ${item.name}`).join(', '),
                         totalAmount: cart.reduce((total, item) => total + item.price * item.quantity, 0),
@@ -382,19 +303,49 @@
                 orderForm.reset();
                 cart = [];
                 updateCartDisplay();
+            } catch (error) { showNotification(`Order failed: ${error.toString()}`); }
+        });
+
+        sellForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const sellerName = document.getElementById('seller-name').value;
+            const sellerProduct = document.getElementById('seller-product').value;
+            const sellerPhone = document.getElementById('seller-phone').value;
+            try {
+                const inquiryCollection = collection(db, `/artifacts/${appId}/public/data/seller_inquiries`);
+                await addDoc(inquiryCollection, { name: sellerName, product: sellerProduct, phone: sellerPhone, createdAt: serverTimestamp() });
+                showNotification("Thank you! Our team will contact you shortly.");
+                sellForm.reset();
             } catch (error) {
-                showNotification(`Order failed: ${error.toString()}`);
+                showNotification("There was an error submitting your inquiry. Please try again.");
             }
+        });
+        
+        searchForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const searchTerm = searchInput.value.trim().toLowerCase();
+            const filteredProducts = productsCache.filter(p => p.name.toLowerCase().includes(searchTerm));
+            renderProducts(filteredProducts);
+            clearSearchBtn.classList.remove('hidden');
+
+            if (searchTerm) {
+                try {
+                    const searchCollection = collection(db, `/artifacts/${appId}/public/data/searches`);
+                    await addDoc(searchCollection, { term: searchTerm, createdAt: serverTimestamp() });
+                } catch (error) { console.error("Error logging search:", error); }
+            }
+        });
+
+        clearSearchBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            renderProducts(productsCache);
+            clearSearchBtn.classList.add('hidden');
         });
 
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-        
-        function showNotification(message) {
-            notificationMessage.textContent = message;
-            notificationModal.classList.remove('hidden');
-        }
+        function showNotification(message) { notificationMessage.textContent = message; notificationModal.classList.remove('hidden'); }
         closeModalBtn.addEventListener('click', () => notificationModal.classList.add('hidden'));
     </script>
 </body>
