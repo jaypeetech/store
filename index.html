@@ -286,7 +286,7 @@
 
         function updateCartDisplay() {
             const subtotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
-            const isCod = paymentCodRadio.checked;
+            const isCod = paymentCodRadio.checked && cart.length > 0;
             const deliveryFee = isCod ? 10 : 0;
             const total = subtotal + deliveryFee;
 
