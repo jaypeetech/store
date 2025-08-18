@@ -343,7 +343,7 @@
                 placeOrder('Unpaid');
             } else {
                 const total = cart.reduce((t, i) => t + i.price * i.quantity, 0);
-                const upiUrl = `upi://pay?pa=8840013600@pthdfc&pn=HostelPencil&am=${total.toFixed(2)}&cu=INR`;
+                const upiUrl = `upi://pay?pa=hominakra2004@okaxis&pn=HostelPencil&am=${total.toFixed(2)}&cu=INR`;
                 payLink.href = upiUrl;
                 paymentAmountSpan.textContent = `₹${total.toFixed(2)}`;
                 paymentModal.classList.remove('hidden');
