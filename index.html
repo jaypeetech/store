@@ -23,7 +23,7 @@
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <a href="#" class="text-2xl font-bold text-gray-900">DormRoom-<span class="text-indigo-600">Store(11pm-1am)</span></a>
+                <a href="#" class="text-2xl font-bold text-gray-900">Hostel<span class="text-indigo-600">Pencil</span></a>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#home" class="text-gray-600 hover:text-indigo-600">Home</a>
                     <a href="#products" class="text-gray-600 hover:text-indigo-600">Products</a>
@@ -59,16 +59,6 @@
                 <h2 class="text-3xl md:text-4xl font-bold">Our Curated Collection</h2>
                 <p class="text-gray-600 mt-2">High-quality essentials for every student.</p>
             </div>
-            
-            <!-- Search Bar -->
-            <div class="max-w-xl mx-auto mb-12">
-                <form id="search-form" class="flex">
-                    <input type="text" id="search-input" placeholder="Search for products..." class="w-full px-4 py-2 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none">
-                    <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded-r-lg font-semibold hover:bg-indigo-700">Search</button>
-                </form>
-                <button id="clear-search-btn" class="hidden w-full mt-4 bg-gray-200 text-gray-700 py-2 rounded-lg font-semibold hover:bg-gray-300">Clear Search</button>
-            </div>
-
             <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="loader col-span-full"></div>
             </div>
@@ -95,7 +85,7 @@
                         <div><label for="hostel-room" class="block text-gray-700 font-medium mb-1">Hostel & Room No.</label><input type="text" id="hostel-room" placeholder="e.g., Block A, Room 201" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500" required></div>
                         <div><label for="phone" class="block text-gray-700 font-medium mb-1">Phone Number</label><input type="tel" id="phone" placeholder="e.g., 9876543210" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500" required></div>
                     </div>
-                    <button type="submit" class="w-full mt-8 bg-indigo-600 text-white py-3 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition transform hover:scale-105">Place Order</button>
+                    <button type="submit" class="w-full mt-8 bg-indigo-600 text-white py-3 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition transform hover:scale-105">Confirm & Proceed</button>
                 </form>
             </div>
         </div>
@@ -109,7 +99,7 @@
                 <p class="text-gray-600 mb-8">Have something to sell? Fill out the form and we'll get in touch.</p>
                 <form id="sell-form" class="space-y-4">
                     <div><label for="seller-name" class="block text-gray-700 font-medium mb-1 text-left">Your Name</label><input type="text" id="seller-name" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500" required></div>
-                    <div><label for="seller-product" class="block text-gray-700 font-medium mb-1 text-left">Product Name / Description</label><input type="text" id="seller-product" placeholder="e.g., Unused Notebooks, Scientific Calculator" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500" required></div>
+                    <div><label for="seller-product" class="block text-gray-700 font-medium mb-1 text-left">Product / Description</label><input type="text" id="seller-product" placeholder="e.g., Unused Notebooks" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500" required></div>
                     <div><label for="seller-phone" class="block text-gray-700 font-medium mb-1 text-left">Your Phone Number</label><input type="tel" id="seller-phone" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500" required></div>
                     <button type="submit" class="w-full mt-8 bg-green-600 text-white py-3 rounded-lg font-semibold text-lg hover:bg-green-700 transition transform hover:scale-105">Submit Inquiry</button>
                 </form>
@@ -119,15 +109,35 @@
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-8">
-        <div class="container mx-auto text-center text-gray-400"><p>&copy; 2025 DormRoomStore. All Rights Reserved.</p></div>
+        <div class="container mx-auto text-center text-gray-400"><p>&copy; 2024 HostelPencil. All Rights Reserved.</p></div>
     </footer>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center hidden z-50 p-4">
+        <div class="bg-white p-8 rounded-lg shadow-xl w-full max-w-md mx-auto fade-in">
+            <h3 class="text-2xl font-bold mb-4">Confirm Your Order</h3>
+            <div id="confirmation-summary"></div>
+            <div class="flex justify-end space-x-4 mt-6">
+                <button id="cancel-confirmation-btn" class="bg-gray-200 text-gray-800 py-2 px-6 rounded-lg">Cancel</button>
+                <button id="confirm-order-btn" class="bg-indigo-600 text-white py-2 px-6 rounded-lg">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50 p-4">
+        <div class="bg-white p-8 rounded-lg shadow-xl text-center max-w-sm mx-auto fade-in">
+            <h3 class="text-2xl font-bold mb-4">Complete Your Payment</h3>
+            <p class="text-lg font-bold mb-4">Total: <span id="payment-amount" class="text-indigo-600"></span></p>
+            <a id="pay-link" href="#" target="_blank" class="block w-full bg-indigo-600 text-white py-3 px-6 rounded-lg hover:bg-indigo-700 text-lg font-semibold mb-4">Pay with UPI</a>
+            <p class="text-sm text-gray-600 mb-4">After paying, please return and click the button below.</p>
+            <button id="confirm-payment-btn" class="w-full bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700">I Have Paid</button>
+        </div>
+    </div>
 
     <!-- Notification Modal -->
     <div id="notification-modal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center hidden z-50 p-4">
-        <div class="bg-white p-8 rounded-lg shadow-xl text-center max-w-sm mx-auto fade-in">
-            <p id="notification-message" class="text-lg font-medium"></p>
-            <button id="close-modal-btn" class="mt-6 bg-indigo-600 text-white py-2 px-8 rounded-lg hover:bg-indigo-700">OK</button>
-        </div>
+        <div class="bg-white p-8 rounded-lg shadow-xl text-center max-w-sm mx-auto fade-in"><p id="notification-message" class="text-lg font-medium"></p><button id="close-modal-btn" class="mt-6 bg-indigo-600 text-white py-2 px-8 rounded-lg">OK</button></div>
     </div>
 
     <script type="module">
@@ -158,12 +168,17 @@
         const cartTotalSpan = document.getElementById('cart-total');
         const orderForm = document.getElementById('order-form');
         const sellForm = document.getElementById('sell-form');
-        const searchForm = document.getElementById('search-form');
-        const searchInput = document.getElementById('search-input');
-        const clearSearchBtn = document.getElementById('clear-search-btn');
         const notificationModal = document.getElementById('notification-modal');
         const notificationMessage = document.getElementById('notification-message');
         const closeModalBtn = document.getElementById('close-modal-btn');
+        const confirmationModal = document.getElementById('confirmation-modal');
+        const confirmationSummary = document.getElementById('confirmation-summary');
+        const cancelConfirmationBtn = document.getElementById('cancel-confirmation-btn');
+        const confirmOrderBtn = document.getElementById('confirm-order-btn');
+        const paymentModal = document.getElementById('payment-modal');
+        const payLink = document.getElementById('pay-link');
+        const paymentAmountSpan = document.getElementById('payment-amount');
+        const confirmPaymentBtn = document.getElementById('confirm-payment-btn');
 
         onAuthStateChanged(auth, async (user) => {
             if (user) { userId = user.uid; listenForProductChanges(); } 
@@ -186,7 +201,7 @@
             }
             productsToRender.forEach(product => {
                 const isOutOfStock = product.units <= 0;
-                productGrid.innerHTML += `<div class="product-card bg-white rounded-xl shadow-md overflow-hidden flex flex-col ${isOutOfStock ? 'opacity-50' : ''}"><img src="${product.imageUrl}" alt="${product.name}" class="w-full h-48 object-cover"><div class="p-5 flex flex-col flex-grow"><h3 class="font-bold text-lg mb-1">${product.name}</h3><p class="text-gray-500 text-sm mb-4">${product.units} units left</p><div class="mt-auto"><div class="flex justify-between items-center mb-4"><p class="text-xl font-bold text-indigo-600">₹${product.price.toFixed(2)}</p><div class="flex items-center border rounded-lg"><button class="quantity-minus px-3 py-1 text-lg font-bold text-gray-600 hover:bg-gray-100 rounded-l-lg">-</button><span class="quantity-display w-10 text-center font-semibold">1</span><button data-max-units="${product.units}" class="quantity-plus px-3 py-1 text-lg font-bold text-gray-600 hover:bg-gray-100 rounded-r-lg">+</button></div></div>${isOutOfStock ? `<span class="block w-full text-center text-sm font-bold text-red-500 py-2">Out of Stock</span>` : `<button data-product-id="${product.id}" data-product-name="${product.name}" data-product-price="${product.price}" class="add-to-cart-btn w-full bg-indigo-100 text-indigo-700 font-semibold py-2 px-4 rounded-lg hover:bg-indigo-200">Add to Cart</button>`}</div></div></div>`;
+                productGrid.innerHTML += `<div class="product-card bg-white rounded-xl shadow-md overflow-hidden flex flex-col ${isOutOfStock ? 'opacity-50' : ''}"><img src="${product.imageUrl}" alt="${product.name}" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e2e8f0/4a5568?text=Image+Error';"><div class="p-5 flex flex-col flex-grow"><h3 class="font-bold text-lg mb-1">${product.name}</h3><p class="text-gray-500 text-sm mb-4">${product.units} units left</p><div class="mt-auto"><div class="flex justify-between items-center mb-4"><p class="text-xl font-bold text-indigo-600">₹${product.price.toFixed(2)}</p><div class="flex items-center border rounded-lg"><button class="quantity-minus px-3 py-1 text-lg font-bold text-gray-600 hover:bg-gray-100 rounded-l-lg">-</button><span class="quantity-display w-10 text-center font-semibold">1</span><button data-max-units="${product.units}" class="quantity-plus px-3 py-1 text-lg font-bold text-gray-600 hover:bg-gray-100 rounded-r-lg">+</button></div></div>${isOutOfStock ? `<span class="block w-full text-center text-sm font-bold text-red-500 py-2">Out of Stock</span>` : `<button data-product-id="${product.id}" data-product-name="${product.name}" data-product-price="${product.price}" class="add-to-cart-btn w-full bg-indigo-100 text-indigo-700 font-semibold py-2 px-4 rounded-lg hover:bg-indigo-200">Add to Cart</button>`}</div></div></div>`;
             });
             attachProductCardListeners();
         }
@@ -275,9 +290,30 @@
             document.querySelectorAll('.cart-quantity-plus').forEach(b => b.addEventListener('click', e => adjustQuantity(e.target.dataset.productId, 1)));
         }
         
-        orderForm.addEventListener('submit', async (e) => {
+        orderForm.addEventListener('submit', (e) => {
             e.preventDefault();
             if (cart.length === 0) { showNotification("Your cart is empty."); return; }
+            const name = document.getElementById('name').value;
+            const room = document.getElementById('hostel-room').value;
+            const phone = document.getElementById('phone').value;
+            const total = cart.reduce((t, i) => t + i.price * i.quantity, 0).toFixed(2);
+            confirmationSummary.innerHTML = `<p><strong>Name:</strong> ${name}</p><p><strong>Room:</strong> ${room}</p><p><strong>Phone:</strong> ${phone}</p><p class="mt-4 font-bold">Total: ₹${total}</p>`;
+            confirmationModal.classList.remove('hidden');
+        });
+
+        cancelConfirmationBtn.addEventListener('click', () => confirmationModal.classList.add('hidden'));
+
+        confirmOrderBtn.addEventListener('click', () => {
+            confirmationModal.classList.add('hidden');
+            const total = cart.reduce((t, i) => t + i.price * i.quantity, 0);
+            const upiUrl = `upi://pay?pa=8840013600@pthdfc&pn=HostelPencil&am=${total.toFixed(2)}&cu=INR`;
+            payLink.href = upiUrl;
+            paymentAmountSpan.textContent = `₹${total.toFixed(2)}`;
+            paymentModal.classList.remove('hidden');
+        });
+
+        confirmPaymentBtn.addEventListener('click', async () => {
+            paymentModal.classList.add('hidden');
             const name = document.getElementById('name').value;
             const room = document.getElementById('hostel-room').value;
             const phone = document.getElementById('phone').value;
@@ -296,16 +332,16 @@
                         customerName: name, hostelRoom: room, phoneNumber: phone,
                         orderItems: cart.map(item => `${item.quantity} x ${item.name}`).join(', '),
                         totalAmount: cart.reduce((total, item) => total + item.price * item.quantity, 0),
-                        status: 'Unpaid', createdAt: serverTimestamp(), customerId: userId
+                        status: 'Paid (Pending Verification)', createdAt: serverTimestamp(), customerId: userId
                     });
                 });
-                showNotification(`Thanks, ${name}! Your order is placed.`);
+                showNotification(`Thanks, ${name}! Your order is confirmed.`);
                 orderForm.reset();
                 cart = [];
                 updateCartDisplay();
             } catch (error) { showNotification(`Order failed: ${error.toString()}`); }
         });
-
+        
         sellForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const sellerName = document.getElementById('seller-name').value;
@@ -319,27 +355,6 @@
             } catch (error) {
                 showNotification("There was an error submitting your inquiry. Please try again.");
             }
-        });
-        
-        searchForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const searchTerm = searchInput.value.trim().toLowerCase();
-            const filteredProducts = productsCache.filter(p => p.name.toLowerCase().includes(searchTerm));
-            renderProducts(filteredProducts);
-            clearSearchBtn.classList.remove('hidden');
-
-            if (searchTerm) {
-                try {
-                    const searchCollection = collection(db, `/artifacts/${appId}/public/data/searches`);
-                    await addDoc(searchCollection, { term: searchTerm, createdAt: serverTimestamp() });
-                } catch (error) { console.error("Error logging search:", error); }
-            }
-        });
-
-        clearSearchBtn.addEventListener('click', () => {
-            searchInput.value = '';
-            renderProducts(productsCache);
-            clearSearchBtn.classList.add('hidden');
         });
 
         const menuBtn = document.getElementById('menu-btn');
