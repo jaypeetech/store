@@ -5,50 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DormRoom-Store</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         .product-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
         .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
-        .loader { border: 4px solid #e5e7eb; border-top: 4px solid #4f46e5; border-radius: 50%; width: 48px; height: 48px; animation: spin 1s linear infinite; margin: 40px auto; }
+        .loader { border: 4px solid #e5e7eb; border-top: 4px solid #dc2626; border-radius: 50%; width: 48px; height: 48px; animation: spin 1s linear infinite; margin: 40px auto; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         .fade-in { animation: fadeIn 0.5s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-slate-50 text-slate-900">
 
     <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <header class="bg-white/90 backdrop-blur-lg shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <a href="#" class="text-2xl font-bold text-gray-900">DormRoom-<span class="text-indigo-600">Store</span></a>
+                <a href="#" class="text-2xl font-extrabold text-slate-900">DormRoom<span class="text-red-600">Store</span></a>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="text-gray-600 hover:text-indigo-600">Home</a>
-                    <a href="#products" class="text-gray-600 hover:text-indigo-600">Products</a>
-                    <a href="#order" class="text-gray-600 hover:text-indigo-600">Your Order</a>
-                    <a href="#sell" class="text-gray-600 hover:text-indigo-600">Sell</a>
+                    <a href="#home" class="text-slate-600 hover:text-red-600 font-medium transition-colors">Home</a>
+                    <a href="#products" class="text-slate-600 hover:text-red-600 font-medium transition-colors">Products</a>
+                    <a href="#order" class="text-slate-600 hover:text-red-600 font-medium transition-colors">Your Order</a>
+                    <a href="#sell" class="text-slate-600 hover:text-red-600 font-medium transition-colors">Sell</a>
                 </div>
                 <div class="md:hidden">
-                    <button id="menu-btn" class="p-2 rounded-md text-gray-600 hover:text-indigo-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button>
+                    <button id="menu-btn" class="p-2 rounded-md text-slate-600 hover:text-red-600"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button>
                 </div>
             </div>
         </nav>
         <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 space-y-2">
-            <a href="#home" class="block py-2 text-gray-600 hover:text-indigo-600">Home</a>
-            <a href="#products" class="block py-2 text-gray-600 hover:text-indigo-600">Products</a>
-            <a href="#order" class="block py-2 text-gray-600 hover:text-indigo-600">Your Order</a>
-            <a href="#sell" class="block py-2 text-gray-600 hover:text-indigo-600">Sell</a>
+            <a href="#home" class="block py-2 text-slate-600 hover:text-red-600 font-medium">Home</a>
+            <a href="#products" class="block py-2 text-slate-600 hover:text-red-600 font-medium">Products</a>
+            <a href="#order" class="block py-2 text-slate-600 hover:text-red-600 font-medium">Your Order</a>
+            <a href="#sell" class="block py-2 text-slate-600 hover:text-red-600 font-medium">Sell</a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="bg-indigo-600 text-white">
+    <section id="home" class="bg-red-600 text-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Stationery, Delivered.</h1>
-            <p class="text-lg md:text-xl text-indigo-200 max-w-2xl mx-auto mb-8">Focus on your studies. We'll bring the essentials right to your hostel door.</p>
-            <a href="#products" class="bg-white text-indigo-600 font-bold py-3 px-8 rounded-full text-lg hover:bg-indigo-50 transition transform hover:scale-105 duration-300 inline-block">Explore Products</a>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4">Essentials, Delivered.</h1>
+            <p class="text-lg md:text-xl text-red-200 max-w-3xl mx-auto mb-8">From late-night study snacks to last-minute stationery, get everything you need delivered right to your dorm room.</p>
+            <a href="#products" class="bg-white text-red-600 font-bold py-3 px-10 rounded-full text-lg hover:bg-red-50 transition transform hover:scale-105 duration-300 inline-block shadow-lg">Start Shopping</a>
         </div>
     </section>
 
@@ -56,15 +56,15 @@
     <section id="products" class="py-20">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold">Our Curated Collection</h2>
-                <p class="text-gray-600 mt-2">High-quality essentials for every student.</p>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Our Curated Collection</h2>
+                <p class="text-slate-600 mt-3 text-lg">High-quality essentials for every student.</p>
             </div>
              <div class="max-w-xl mx-auto mb-12">
-                <form id="search-form" class="flex">
-                    <input type="text" id="search-input" placeholder="Search for products..." class="w-full px-4 py-2 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-indigo-500 focus:outline-none">
-                    <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded-r-lg font-semibold hover:bg-indigo-700">Search</button>
+                <form id="search-form" class="flex shadow-sm rounded-lg">
+                    <input type="text" id="search-input" placeholder="Search for products..." class="w-full px-4 py-3 border-gray-200 border rounded-l-lg focus:ring-2 focus:ring-red-500 focus:outline-none transition">
+                    <button type="submit" class="bg-red-600 text-white px-6 py-3 rounded-r-lg font-semibold hover:bg-red-700 transition-colors">Search</button>
                 </form>
-                <button id="clear-search-btn" class="hidden w-full mt-4 bg-gray-200 text-gray-700 py-2 rounded-lg font-semibold hover:bg-gray-300">Clear Search</button>
+                <button id="clear-search-btn" class="hidden w-full mt-4 bg-slate-200 text-slate-700 py-2 rounded-lg font-semibold hover:bg-slate-300 transition-colors">Clear Search</button>
             </div>
             <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="loader col-span-full"></div>
@@ -73,39 +73,39 @@
     </section>
 
     <!-- Order & Checkout Section -->
-    <section id="order" class="bg-gray-100 py-20">
+    <section id="order" class="bg-slate-100 py-20">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-lg">
-                <h2 class="text-3xl font-bold text-center mb-8">Review Your Order</h2>
+                <h2 class="text-3xl font-extrabold text-center mb-8">Review Your Order</h2>
                 <div id="cart-items" class="mb-6 space-y-4">
-                    <p class="text-gray-500 text-center py-4">Your cart is empty.</p>
+                    <p class="text-slate-500 text-center py-4">Your cart is empty.</p>
                 </div>
 
                 <div class="mb-6">
-                    <h3 class="text-lg font-medium mb-2">Payment Method</h3>
-                    <div class="flex space-x-4 rounded-lg bg-gray-100 p-1">
-                        <div class="w-1/2"><input type="radio" id="payment-upi" name="payment-method" value="upi" class="hidden peer" checked><label for="payment-upi" class="block text-center p-2 rounded-md cursor-pointer peer-checked:bg-indigo-600 peer-checked:text-white font-semibold">UPI</label></div>
-                        <div class="w-1/2"><input type="radio" id="payment-cod" name="payment-method" value="cod" class="hidden peer"><label for="payment-cod" class="block text-center p-2 rounded-md cursor-pointer peer-checked:bg-indigo-600 peer-checked:text-white font-semibold">Cash on Delivery</label></div>
+                    <h3 class="text-lg font-semibold mb-2">Payment Method</h3>
+                    <div class="flex space-x-4 rounded-lg bg-slate-100 p-1">
+                        <div class="w-1/2"><input type="radio" id="payment-upi" name="payment-method" value="upi" class="hidden peer" checked><label for="payment-upi" class="block text-center p-2 rounded-md cursor-pointer peer-checked:bg-red-600 peer-checked:text-white font-semibold transition-colors">UPI</label></div>
+                        <div class="w-1/2"><input type="radio" id="payment-cod" name="payment-method" value="cod" class="hidden peer"><label for="payment-cod" class="block text-center p-2 rounded-md cursor-pointer peer-checked:bg-red-600 peer-checked:text-white font-semibold transition-colors">Cash on Delivery</label></div>
                     </div>
                 </div>
 
                 <div class="border-t-2 border-dashed pt-6 mb-6 space-y-2">
-                    <div class="flex justify-between items-center text-md"><span class="text-gray-600">Subtotal</span><span id="cart-subtotal">₹0.00</span></div>
-                    <div id="delivery-fee-row" class="hidden flex justify-between items-center text-md"><span class="text-gray-600">Delivery Fee</span><span>₹10.00</span></div>
-                    <div class="flex justify-between items-center text-xl font-bold"><span>Total</span><span id="cart-total" class="text-indigo-600">₹0.00</span></div>
+                    <div class="flex justify-between items-center text-md"><span class="text-slate-600">Subtotal</span><span id="cart-subtotal">₹0.00</span></div>
+                    <div id="delivery-fee-row" class="hidden flex justify-between items-center text-md"><span class="text-slate-600">Delivery Fee</span><span>₹10.00</span></div>
+                    <div class="flex justify-between items-center text-xl font-bold"><span>Total</span><span id="cart-total" class="text-red-600">₹0.00</span></div>
                 </div>
 
                 <form id="order-form">
                     <div class="space-y-4">
                         <div>
-                            <label for="name" class="block text-gray-700 font-medium mb-1">Full Name</label>
-                            <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500" required>
-                            <p class="text-xs text-gray-500 mt-1">Please ensure this name matches the name on your UPI app for payment verification.</p>
+                            <label for="name" class="block text-slate-700 font-medium mb-1">Full Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-500 transition" required>
+                            <p class="text-xs text-slate-500 mt-1">Please ensure this name matches your UPI app for payment verification.</p>
                         </div>
-                        <div><label for="hostel-room" class="block text-gray-700 font-medium mb-1">Hostel & Room No.</label><input type="text" id="hostel-room" placeholder="e.g., Block A, Room 201" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500" required></div>
-                        <div><label for="phone" class="block text-gray-700 font-medium mb-1">Phone Number</label><input type="tel" id="phone" placeholder="e.g., 9876543210" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500" required></div>
+                        <div><label for="hostel-room" class="block text-slate-700 font-medium mb-1">Hostel & Room No.</label><input type="text" id="hostel-room" placeholder="e.g., Block A, Room 201" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-500" required></div>
+                        <div><label for="phone" class="block text-slate-700 font-medium mb-1">Phone Number</label><input type="tel" id="phone" placeholder="e.g., 9876543210" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-500" required></div>
                     </div>
-                    <button type="submit" class="w-full mt-8 bg-indigo-600 text-white py-3 rounded-lg font-semibold text-lg hover:bg-indigo-700 transition transform hover:scale-105">Confirm & Proceed</button>
+                    <button type="submit" class="w-full mt-8 bg-red-600 text-white py-3 rounded-lg font-semibold text-lg hover:bg-red-700 transition transform hover:scale-105">Confirm & Proceed</button>
                 </form>
             </div>
         </div>
@@ -115,12 +115,12 @@
     <section id="sell" class="py-20 bg-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-2xl mx-auto text-center">
-                <h2 class="text-3xl font-bold mb-2">Sell Your Products</h2>
-                <p class="text-gray-600 mb-8">Have something to sell? Fill out the form and we'll get in touch.</p>
+                <h2 class="text-3xl font-extrabold mb-2">Sell Your Products</h2>
+                <p class="text-slate-600 mb-8 text-lg">Have something to sell? Fill out the form and we'll get in touch.</p>
                 <form id="sell-form" class="space-y-4">
-                    <div><label for="seller-name" class="block text-gray-700 font-medium mb-1 text-left">Your Name</label><input type="text" id="seller-name" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500" required></div>
-                    <div><label for="seller-product" class="block text-gray-700 font-medium mb-1 text-left">Product / Description</label><input type="text" id="seller-product" placeholder="e.g., Unused Notebooks" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500" required></div>
-                    <div><label for="seller-phone" class="block text-gray-700 font-medium mb-1 text-left">Your Phone Number</label><input type="tel" id="seller-phone" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-indigo-500" required></div>
+                    <div><label for="seller-name" class="block text-slate-700 font-medium mb-1 text-left">Your Name</label><input type="text" id="seller-name" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-500" required></div>
+                    <div><label for="seller-product" class="block text-slate-700 font-medium mb-1 text-left">Product / Description</label><input type="text" id="seller-product" placeholder="e.g., Unused Notebooks" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-500" required></div>
+                    <div><label for="seller-phone" class="block text-slate-700 font-medium mb-1 text-left">Your Phone Number</label><input type="tel" id="seller-phone" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-red-500" required></div>
                     <button type="submit" class="w-full mt-8 bg-green-600 text-white py-3 rounded-lg font-semibold text-lg hover:bg-green-700 transition transform hover:scale-105">Submit Inquiry</button>
                 </form>
             </div>
@@ -128,8 +128,8 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8">
-        <div class="container mx-auto text-center text-gray-400"><p>&copy; 2024 HostelPencil. All Rights Reserved.</p></div>
+    <footer class="bg-slate-900 text-white py-8">
+        <div class="container mx-auto text-center text-slate-400"><p>&copy; 2024 DormRoom-Store. All Rights Reserved.</p></div>
     </footer>
 
     <!-- Confirmation Modal -->
@@ -138,8 +138,8 @@
             <h3 class="text-2xl font-bold mb-4">Confirm Your Order</h3>
             <div id="confirmation-summary"></div>
             <div class="flex justify-end space-x-4 mt-6">
-                <button id="cancel-confirmation-btn" class="bg-gray-200 text-gray-800 py-2 px-6 rounded-lg">Cancel</button>
-                <button id="confirm-order-btn" class="bg-indigo-600 text-white py-2 px-6 rounded-lg">Confirm</button>
+                <button id="cancel-confirmation-btn" class="bg-slate-200 text-slate-800 py-2 px-6 rounded-lg">Cancel</button>
+                <button id="confirm-order-btn" class="bg-red-600 text-white py-2 px-6 rounded-lg">Confirm</button>
             </div>
         </div>
     </div>
@@ -148,21 +148,21 @@
     <div id="payment-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50 p-4">
         <div class="bg-white p-8 rounded-lg shadow-xl text-center max-w-sm mx-auto fade-in">
             <h3 class="text-2xl font-bold mb-4">Complete Your Payment</h3>
-            <p class="text-gray-600">Please pay the total amount to the UPI ID below:</p>
-            <div class="my-4 p-3 bg-gray-100 rounded-lg flex items-center justify-center">
-                <span id="upi-id" class="text-lg font-bold text-indigo-700">9458826870</span>
-                <button id="copy-upi-btn" class="ml-4 bg-indigo-100 text-indigo-700 font-semibold py-1 px-3 rounded-lg text-sm">Copy</button>
+            <p class="text-slate-600">Please pay the total amount to the UPI ID below:</p>
+            <div class="my-4 p-3 bg-slate-100 rounded-lg flex items-center justify-center">
+                <span id="upi-id" class="text-lg font-bold text-red-700">9458826870</span>
+                <button id="copy-upi-btn" class="ml-4 bg-red-100 text-red-700 font-semibold py-1 px-3 rounded-lg text-sm">Copy</button>
             </div>
-            <p class="text-lg font-bold mb-4">Total: <span id="payment-amount" class="text-indigo-600"></span></p>
+            <p class="text-lg font-bold mb-4">Total: <span id="payment-amount" class="text-red-600"></span></p>
             <p class="text-sm text-red-600 font-bold mb-4">IMPORTANT: After paying, you MUST return to this page and click "I Have Paid" to confirm your order.</p>
             <button id="confirm-payment-btn" class="w-full bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700">I Have Paid</button>
-            <p class="text-xs text-gray-500 mt-4">For any queries, contact: 9205168711</p>
+            <p class="text-xs text-slate-500 mt-4">For any queries, contact: 9205168711</p>
         </div>
     </div>
 
     <!-- Notification Modal -->
     <div id="notification-modal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center hidden z-50 p-4">
-        <div class="bg-white p-8 rounded-lg shadow-xl text-center max-w-sm mx-auto fade-in"><p id="notification-message" class="text-lg font-medium"></p><button id="close-modal-btn" class="mt-6 bg-indigo-600 text-white py-2 px-8 rounded-lg">OK</button></div>
+        <div class="bg-white p-8 rounded-lg shadow-xl text-center max-w-sm mx-auto fade-in"><p id="notification-message" class="text-lg font-medium"></p><button id="close-modal-btn" class="mt-6 bg-red-600 text-white py-2 px-8 rounded-lg">OK</button></div>
     </div>
 
     <script type="module">
@@ -233,7 +233,7 @@
             }
             productsToRender.forEach(product => {
                 const isOutOfStock = product.units <= 0;
-                productGrid.innerHTML += `<div class="product-card bg-white rounded-xl shadow-md overflow-hidden flex flex-col ${isOutOfStock ? 'opacity-50' : ''}"><img src="${product.imageUrl}" alt="${product.name}" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e2e8f0/4a5568?text=Image+Error';"><div class="p-5 flex flex-col flex-grow"><h3 class="font-bold text-lg mb-1">${product.name}</h3><p class="text-gray-500 text-sm mb-4">${product.units} units left</p><div class="mt-auto"><div class="flex justify-between items-center mb-4"><p class="text-xl font-bold text-indigo-600">₹${product.price.toFixed(2)}</p><div class="flex items-center border rounded-lg"><button class="quantity-minus px-3 py-1 text-lg font-bold text-gray-600 hover:bg-gray-100 rounded-l-lg">-</button><span class="quantity-display w-10 text-center font-semibold">1</span><button data-max-units="${product.units}" class="quantity-plus px-3 py-1 text-lg font-bold text-gray-600 hover:bg-gray-100 rounded-r-lg">+</button></div></div>${isOutOfStock ? `<span class="block w-full text-center text-sm font-bold text-red-500 py-2">Out of Stock</span>` : `<button data-product-id="${product.id}" data-product-name="${product.name}" data-product-price="${product.price}" class="add-to-cart-btn w-full bg-indigo-100 text-indigo-700 font-semibold py-2 px-4 rounded-lg hover:bg-indigo-200">Add to Cart</button>`}</div></div></div>`;
+                productGrid.innerHTML += `<div class="product-card bg-white rounded-xl shadow-md overflow-hidden flex flex-col ${isOutOfStock ? 'opacity-50' : ''}"><img src="${product.imageUrl}" alt="${product.name}" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e2e8f0/4a5568?text=Image+Error';"><div class="p-5 flex flex-col flex-grow"><h3 class="font-bold text-lg mb-1">${product.name}</h3><p class="text-slate-500 text-sm mb-4">${product.units} units left</p><div class="mt-auto"><div class="flex justify-between items-center mb-4"><p class="text-xl font-bold text-red-600">₹${product.price.toFixed(2)}</p><div class="flex items-center border rounded-lg"><button class="quantity-minus px-3 py-1 text-lg font-bold text-slate-600 hover:bg-slate-100 rounded-l-lg">-</button><span class="quantity-display w-10 text-center font-semibold">1</span><button data-max-units="${product.units}" class="quantity-plus px-3 py-1 text-lg font-bold text-slate-600 hover:bg-slate-100 rounded-r-lg">+</button></div></div>${isOutOfStock ? `<span class="block w-full text-center text-sm font-bold text-red-500 py-2">Out of Stock</span>` : `<button data-product-id="${product.id}" data-product-name="${product.name}" data-product-price="${product.price}" class="add-to-cart-btn w-full bg-red-100 text-red-700 font-semibold py-2 px-4 rounded-lg hover:bg-red-200">Add to Cart</button>`}</div></div></div>`;
             });
             attachProductCardListeners();
         }
@@ -304,7 +304,7 @@
             deliveryFeeRow.classList.toggle('hidden', !isCod);
 
             if (cart.length === 0) {
-                cartItemsDiv.innerHTML = '<p class="text-gray-500 text-center py-4">Your cart is empty.</p>';
+                cartItemsDiv.innerHTML = '<p class="text-slate-500 text-center py-4">Your cart is empty.</p>';
                 return;
             }
             cartItemsDiv.innerHTML = '';
@@ -314,9 +314,9 @@
                         <div>
                             <p class="font-medium">${item.name}</p>
                             <div class="flex items-center space-x-2 mt-1">
-                                <button data-product-id="${item.id}" class="cart-quantity-minus bg-gray-200 w-6 h-6 rounded-full font-bold">-</button>
-                                <span class="text-sm text-gray-600">Qty: ${item.quantity}</span>
-                                <button data-product-id="${item.id}" class="cart-quantity-plus bg-gray-200 w-6 h-6 rounded-full font-bold">+</button>
+                                <button data-product-id="${item.id}" class="cart-quantity-minus bg-slate-200 w-6 h-6 rounded-full font-bold">-</button>
+                                <span class="text-sm text-slate-600">Qty: ${item.quantity}</span>
+                                <button data-product-id="${item.id}" class="cart-quantity-plus bg-slate-200 w-6 h-6 rounded-full font-bold">+</button>
                             </div>
                         </div>
                         <p class="font-medium">₹${(item.price * item.quantity).toFixed(2)}</p>
